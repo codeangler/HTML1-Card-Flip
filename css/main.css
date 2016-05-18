@@ -10,6 +10,53 @@
 */
 
 /* 	
+	#portfolio  	|   
+	.portfolio-item |	.flip3D
+	.front 			| 	.front
+	.back 			|	.back 
+https://desandro.github.io/3dtransforms/docs/card-flip.html
+
+*/
+
+.portfolio-item{
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	float:left;
+}
+
+.portfolio-item > .front {
+	position:absolute;
+	transform: perspective(600px) rotateY(0);
+	background: gray;
+	width: 200px;
+	height: 200px;
+	border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+
+.portfolio-item > .back {
+	position: absolute;
+	transform: perspective(600px) rotateY(180deg);
+	background: #80BFFF;
+	width: 200px;
+	height: 200px;
+	border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+
+.portfolio-item:hover > .front {
+	transform: perspective(600px) rotateY(-180deg);
+}
+
+.portfolio-item:hover > .back {
+	transform: perspective(600px) rotateY(0deg);
+}
+
+
+/* 	
 	#portfolio  	|   .container
 	.portfolio-item |	.card
 	.front 			| 	.front
@@ -18,41 +65,41 @@ https://desandro.github.io/3dtransforms/docs/card-flip.html
 
 */
 
-#portfolio{
-	width: 100%;
-	height: 200px;
-	position:relative;
-	perspective: 800px;
-}
+/*#portfolio{*/
+/*	width: 100%;*/
+/*	height: 200px;*/
+/*	position:relative;*/
+/*	perspective: 800px;*/
+/*}*/
 
-.portfolio-item {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
+/*.portfolio-item {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  position: absolute;*/
+/*  transform-style: preserve-3d;*/
+/*  transition: transform 1s;*/
+/*}*/
 
-.portfolio-item div {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  backface-visibility: hidden;
-}
+/*.portfolio-item div {*/
+/*  margin: 0;*/
+/*  display: block;*/
+/*  position: absolute;*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*  backface-visibility: hidden;*/
+/*}*/
 
-.portfolio-item .front {
-  background: red;
-}
-.portfolio-item .back {
-  background: blue;
-  transform: rotateY( 180deg );
-}
+/*.portfolio-item .front {*/
+/*  background: red;*/
+/*}*/
+/*.portfolio-item .back {*/
+/*  background: blue;*/
+/*  transform: rotateY( 180deg );*/
+/*}*/
 
-.portfolio-item.flipped {
-  transform: rotateY( 180deg );
-}
+/*.portfolio-item.flipped {*/
+/*  transform: rotateY( 180deg );*/
+/*}*/
 
 
 
